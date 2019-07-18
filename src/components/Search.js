@@ -5,19 +5,32 @@ import Book from './Book';
 import ReactAutocomplete from 'react-autocomplete';
 
 class Search extends Component {
+
+  constructor(props) {
+    super(props);
+
+  }
+
   state = {
     query: '',
     resultBooks: []
   }
 
-
   performSearch = (q) => {
     // console.log(q);
     // BooksAPI.search(q).then((b) => console.log(b));
     BooksAPI.search(q).then(
-      (b) => {
+      (books) => {
+        books.map(book => (
+          this.props.booksOnShelf.filter(
+            (b) => b.id === book.id).map(
+              b => book.shelf = b.shelf
+            )
+          )
+        )
+        
         this.setState({
-          resultBooks: b
+          resultBooks: books
         })
       }
     )
@@ -107,8 +120,8 @@ class Search extends Component {
   
 
   render() {
-    const { booksOnShelf } = this.props;
-    const booksOnShelfId = booksOnShelf.map((b) => b.id);
+    // const { booksOnShelf } = this.props;
+    // const booksOnShelfId = booksOnShelf.map((b) => b.id);
 
     return (
       <div className="search-books">
@@ -143,9 +156,7 @@ class Search extends Component {
         <div className="search-books-results">
           <div className="results">
             <ol className="books-grid">
-              { this.state.resultBooks.filter(
-                (b) => booksOnShelfId.indexOf(b.id) === -1
-              ).map((book) => (
+              { this.state.resultBooks.map((book) => (
                 <li key={ book.id }>
                   <Book title={book.title} authors={ book.authors } 
                       thumbnail={ book.imageLinks ? 
