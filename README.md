@@ -1,15 +1,29 @@
 # MyReads Project
 
-This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
+This is a front-end React project demo-ing a personal library containing three bookshelves (currently reading, want to read, and read) with a search functionality to add new books to your shelves.  
 
-Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
+The starter files are provided by Udacity @ https://github.com/udacity/reactnd-project-myreads-starter.
 
-## TL;DR
+The project is bootstrapped using [Create React App](https://github.com/facebookincubator/create-react-app). 
 
-To get started developing right away:
 
-* install all project dependencies with `npm install`
-* start the development server with `npm start`
+## To get started with the app right away:
+
+* git clone this repo and then `cd` in to `xr-reactnd-project-myreads`
+* install all project dependencies with `npm install` or `yarn install`
+* start the development server with `npm start` or `yarn start`
+* this will start the app in your default browser or if a default browser does not launch, you can visit the app at `localhost:3000`
+
+## To use the app
+
+* the home page will render three book shelves with some starter books on each shelf
+* you have the option to click on the green drop down button on each book and move it to a different shelf (such as moving from `currently reading` to `read` should you have finished this particular book)
+* next, you will see a large plus sign green button at the bottom, this will allow you to search for new books
+* it is very important here to note that this demo project only has a few set of search terms pre-cached
+* to make the search terms readily available to the end user, I have made the input field a searchable drop down of only the allowed terms, this will ensure that you will get search results back on click of a dropdown option
+* once a search result returns a set of books, you can navigate it the same way as any book on the homepage, by selecting the down arrow button and moving the selected book to one of your shelves
+
+# From Udacity 
 
 ## What You're Getting
 ```bash
